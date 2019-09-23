@@ -647,7 +647,7 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
                                 text = text.replace(/\n/g, ' ');
                             }else{
                                 // remove unnecessary chrome insert
-                                text = text.replace(/<(|\/)meta[^>]*?>/ig, '');
+                                text = text.replace(/<(|\/)(html|body|meta)[^>]*?>/ig, '').trim();
                                 if(text.match(/<[^>]*?(ta-bind)[^>]*?>/)){
                                     // entire text-angular or ta-bind has been pasted, REMOVE AT ONCE!!
                                     if(text.match(/<[^>]*?(text-angular)[^>]*?>/)){
